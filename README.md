@@ -140,3 +140,4 @@ biblioteca-app/
   con el `main.ts` incluido (tiene `enableCors` hacia el puerto 4200).
 - **Puerto ocupado**: si 3000 o 4200 ya están en uso, cierra el proceso
   anterior o cambia el puerto.
+# blibloteca
