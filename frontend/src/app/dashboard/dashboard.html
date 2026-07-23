@@ -1,0 +1,31 @@
+<section class="page">
+  <h1>Usuarios</h1>
+
+  <div class="card">
+    <h2>Registrar usuario</h2>
+    @if (error()) { <div class="alerta alerta-error">{{ error() }}</div> }
+    @if (mensaje()) { <div class="alerta alerta-ok">{{ mensaje() }}</div> }
+    <form (ngSubmit)="registrar()">
+      <input type="text" placeholder="Nombre" [(ngModel)]="nombre" name="nombre" />
+      <input type="email" placeholder="Email" [(ngModel)]="email" name="email" />
+      <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" />
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Usuarios registrados</h2>
+    <table>
+      <thead><tr><th>Nombre</th><th>Email</th><th>Fecha registro</th></tr></thead>
+      <tbody>
+        @for (usuario of usuarios(); track usuario.id) {
+          <tr>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.fecha_creacion | date:'short' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

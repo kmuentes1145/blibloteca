@@ -1,0 +1,48 @@
+<section class="page">
+  <h1>Préstamos</h1>
+
+  <div class="card">
+    <h2>Registrar préstamo</h2>
+    @if (error()) { <div class="alerta alerta-error">{{ error() }}</div> }
+    @if (mensaje()) { <div class="alerta alerta-ok">{{ mensaje() }}</div> }
+    <form (ngSubmit)="registrar()">
+      <select [(ngModel)]="usuarioId" name="usuarioId">
+        <option [ngValue]="null">Selecciona usuario</option>
+        @for (u of usuarios(); track u.id) {
+          <option [ngValue]="u.id">{{ u.nombre }}</option>
+        }
+      </select>
+      <select [(ngModel)]="libroId" name="libroId">
+        <option [ngValue]="null">Selecciona libro</option>
+        @for (l of libros(); track l.id) {
+          @if (l.cantidad_disponible > 0) {
+            <option [ngValue]="l.id">{{ l.titulo }} ({{ l.cantidad_disponible }} disponibles)</option>
+          }
+        }
+      </select>
+      <button type="submit">Registrar préstamo</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Historial de préstamos</h2>
+    <table>
+      <thead><tr><th>Usuario</th><th>Libro</th><th>Fecha préstamo</th><th>Estado</th><th></th></tr></thead>
+      <tbody>
+        @for (p of prestamos(); track p.id) {
+          <tr>
+            <td>{{ p.usuario.nombre }}</td>
+            <td>{{ p.libro.titulo }}</td>
+            <td>{{ p.fecha_prestamo | date:'short' }}</td>
+            <td>{{ p.estado }}</td>
+            <td>
+              @if (p.estado === 'activo') {
+                <button type="button" (click)="devolver(p.id)">Devolver</button>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

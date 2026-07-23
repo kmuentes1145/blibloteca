@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "Biblioteca Virtual - Microservicios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000" }
+  ],
+  "item": [
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Geovanny\",\n  \"email\": \"geovanny@utm.edu.ec\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/usuarios", "host": ["{{base_url}}"], "path": ["usuarios"] }
+          }
+        },
+        {
+          "name": "Listar Usuarios",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/usuarios", "host": ["{{base_url}}"], "path": ["usuarios"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Libros",
+      "item": [
+        {
+          "name": "Crear Libro",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Cien años de soledad\",\n  \"autor\": \"Gabriel García Márquez\",\n  \"isbn\": \"978-0307474728\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/libros", "host": ["{{base_url}}"], "path": ["libros"] }
+          }
+        },
+        {
+          "name": "Listar Libros",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/libros", "host": ["{{base_url}}"], "path": ["libros"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prestamos",
+      "item": [
+        {
+          "name": "Crear Prestamo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"libroId\": 1\n}"
+            },
+            "url": { "raw": "{{base_url}}/prestamos", "host": ["{{base_url}}"], "path": ["prestamos"] }
+          }
+        },
+        {
+          "name": "Listar Prestamos",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/prestamos", "host": ["{{base_url}}"], "path": ["prestamos"] }
+          }
+        }
+      ]
+    }
+  ]
+}
