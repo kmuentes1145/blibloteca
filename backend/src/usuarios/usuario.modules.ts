@@ -1,3 +1,4 @@
+// este archivo define el módulo Usuario, que contiene los componentes relacionados con los usuarios.
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Usuario } from './usuario.entity';
@@ -9,4 +10,4 @@ import { UsuarioController } from './usuario.controller';
   providers: [UsuarioService],
   controllers: [UsuarioController],
 })
-export class UsuarioModule {}
+export class UsuarioModule { }

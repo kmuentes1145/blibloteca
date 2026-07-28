@@ -1,3 +1,5 @@
+// este archivo define el componente principal de la aplicación Angular, que 
+// sirve como punto de entrada para la interfaz de usuario.
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 @Component({

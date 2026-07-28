@@ -1,3 +1,5 @@
+// este archivo define las rutas de la aplicación Angular, que mapean las URL a los 
+// componentes correspondientes. 
 import { Routes } from '@angular/router';
 import { Dashboard } from './dashboard/dashboard';
 import { Libros } from './libros/libros';

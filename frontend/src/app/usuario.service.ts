@@ -1,3 +1,7 @@
+// Este archivo define un servicio de Angular llamado `UsuarioService`
+// que se encarga de interactuar con una API para gestionar usuarios en una biblioteca virtual. 
+// El servicio utiliza `HttpClient` para realizar solicitudes HTTP y 
+// proporciona métodos para obtener la lista de usuarios y crear un nuevo usuario.
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

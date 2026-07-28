@@ -1,3 +1,4 @@
+// este archivo define el módulo Prestamo, que contiene los componentes relacionados con los préstamos.
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Prestamo } from './prestamo.entity';
@@ -11,4 +12,4 @@ import { PrestamoController } from './prestamo.controller';
   providers: [PrestamoService],
   controllers: [PrestamoController],
 })
-export class PrestamoModule {}
+export class PrestamoModule { }

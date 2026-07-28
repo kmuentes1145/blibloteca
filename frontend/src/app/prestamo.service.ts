@@ -1,3 +1,7 @@
+// Este archivo define un servicio de Angular llamado `PrestamoService`
+// que se encarga de interactuar con una API para gestionar préstamos de libros en una biblioteca virtual. 
+// El servicio utiliza `HttpClient` para realizar solicitudes HTTP y 
+// proporciona métodos para obtener la lista de préstamos, crear un nuevo préstamo y registrar la devolución de un préstamo.
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

@@ -1,3 +1,4 @@
+//este archivo define la entidad Prestamo, que representa un préstamo de libro en la aplicación.
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from 'typeorm';
 import { Usuario } from '../usuarios/usuario.entity';
 import { Libro } from '../libros/libro.entity';

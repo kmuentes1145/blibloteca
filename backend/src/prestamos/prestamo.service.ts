@@ -1,3 +1,4 @@
+// este servicio sigue el patrón de diseño de servicio
 import { Injectable, BadRequestException, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -15,7 +16,7 @@ export class PrestamoService {
     private readonly usuarioRepository: Repository<Usuario>,
     @InjectRepository(Libro)
     private readonly libroRepository: Repository<Libro>,
-  ) {}
+  ) { }
 
   findAll(): Promise<Prestamo[]> {
     return this.prestamoRepository.find();

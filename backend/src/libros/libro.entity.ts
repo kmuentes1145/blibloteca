@@ -1,3 +1,4 @@
+// aqui se define la entidad Libro, que representa un libro en la aplicación.
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm';
 
 @Entity('libros')
